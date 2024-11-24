@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Pasar Online</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/logo.png" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">BERANDA</a></li>
+                        <li class="nav-item"><a class="nav-link" href=dashboard.html>PRODUK</a></li>
+                        <li class="nav-item"><a class="nav-link" href=akun.html>AKUN</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">TENTANG</a></li>
+                        <li class="nav-item"><a class="nav-link" href=login.html>MASUK</a></li>
+                    </ul>
+                    <!-- Search Bar-->
+                    <form class="d-flex ms-auto" action="search_results.html" method="GET">
+                        <input class="form-control me-2" type="search" placeholder="Cari produk..." aria-label="Search" name="query" />
+                        <button class="btn btn-outline-light" type="submit">Cari</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Ayo Beli di Pasar dengan satu kali klik </div>
+                <div class="masthead-heading text-uppercase"></div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+            </div>
+        </header>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Login</h2>
+
+        <!-- Peringatan jika sudah login -->
+        <div id="loginWarning" class="alert alert-warning" style="display: none;">
+            <strong>Anda sudah login!</strong> Anda akan diarahkan ke halaman akun.
+        </div>
+
+        <!-- Peringatan jika login gagal -->
+        <div id="loginError" class="alert alert-danger" style="display: none;">
+            <strong>Login gagal!</strong> Cek kembali username dan password Anda.
+        </div>
+
+        <!-- Form Login -->
+        <form id="loginForm" onsubmit="login(event)">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <!-- Link ke halaman registrasi -->
+        <p class="mt-3">Belum punya akun? <a href="register.html">Daftar Sekarang</a></p>
+    </div>
+
+    <script>
+        // Fungsi untuk memeriksa apakah pengguna sudah login
+        function checkLoginStatus() {
+            let user = localStorage.getItem('loggedInUser');
+            if (user) {
+                document.getElementById('loginWarning').style.display = 'block'; // Tampilkan peringatan
+                setTimeout(function() {
+                    window.location.href = 'akun.html'; // Arahkan ke halaman akun setelah 3 detik
+                }, 3000); // Waktu tunggu 3 detik sebelum diarahkan
+            }
+        }
+
+
+    // Fungsi untuk menangani login
+    function login(event) {
+        event.preventDefault(); // Mencegah form submit default
+
+        // Ambil data dari form
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Mengambil data pengguna yang terdaftar
+        let storedUser = JSON.parse(localStorage.getItem('registeredUser')); // Mendapatkan akun yang terdaftar di localStorage
+
+        // Cek apakah data yang dimasukkan cocok dengan data yang terdaftar
+        if (storedUser && storedUser.username === username && storedUser.password === password) {
+            // Menyimpan data pengguna yang sudah login ke localStorage
+            localStorage.setItem('loggedInUser', JSON.stringify({
+                username: username,
+                email: storedUser.email,
+                fullName: storedUser.fullName,
+                phone: storedUser.phone, // Simpan nomor telepon
+                alamat: storedUser.alamat // Simpan alamat
+            }));
+
+            // Mengarahkan ke halaman akun
+            window.location.href = 'akun.html';
+        } else {
+            // Menampilkan peringatan jika login gagal
+            document.getElementById('loginError').style.display = 'block';
+        }
+    }
+
+
+        // Panggil fungsi untuk memeriksa status login saat halaman dimuat
+        checkLoginStatus();
+
+        // Setelah login berhasil
+localStorage.setItem('isLoggedIn', 'true');
+
+    </script>
+</body>
+</html>

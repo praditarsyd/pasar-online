@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading.....</title>
+  <style>
+    #mainNav {
+            background-color: #333; 
+        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .loading-container {
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .loader {
+      border: 10px solid #f3f3f3;
+      border-top: 10px solid #3498db;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      animation: spin 2s linear infinite;
+    }
+
+    p {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    .message-container {
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-container">
+    <div class="loader"></div>
+    <p>Loading...</p>
+  </div>
+
+  <div class="message-container" id="message-container">
+    <h2>Pesanan Berhasil, Mohon Ditunggu</h2>
+  </div>
+
+  <script>
+    // Fungsi untuk menampilkan pesan setelah 30 detik
+    setTimeout(function() {
+      // Sembunyikan loader
+      document.querySelector('.loading-container').style.display = 'none';
+      
+      // Tampilkan pesan keberhasilan
+      document.getElementById('message-container').style.display = 'block';
+
+      // Redirect ke halaman cek.html setelah 3 detik
+      setTimeout(function() {
+        window.location.href = "cek.html"; // Arahkan ke halaman cek perjalanan
+      }, 3000); // Delay 3 detik sebelum redirect
+    }, 30000); // Delay 30 detik
+  </script>
+</body>
+</html>

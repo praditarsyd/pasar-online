@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Pasar Online</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top"><img src="assets/img/logo.png" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href=index.html>BERANDA</a></li>
+                        <li class="nav-item"><a class="nav-link" href=dashboard.html>PRODUK</a></li>
+                        <li class="nav-item"><a class="nav-link" href=akun.html>AKUN</a></li>
+                        <li class="nav-item"><a class="nav-link" href=about.html>TENTANG</a></li>
+                        <li class="nav-item"><a class="nav-link" href=login.html>MASUK</a></li>
+                </ul>
+                <form class="d-flex ms-auto" action="search_results.html" method="GET">
+                    <input class="form-control me-2" type="search" placeholder="Cari produk..." aria-label="Search" name="query" />
+                    <button class="btn btn-outline-light" type="submit">Cari</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+  <style>
+    #mainNav {
+            background-color: #333; 
+        }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+      width: 80%;
+      height: 200px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .track {
+      width: 100%;
+      height: 4px;
+      background-color: #3498db;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      background-color: #3498db;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .moving-dot {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: moveDot 360s linear infinite;
+    }
+
+    @keyframes moveDot {
+      0% {
+        left: 0%;
+      }
+      33% {
+        left: 33%;
+      }
+      66% {
+        left: 66%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+
+    .status {
+      font-size: 24px;
+      font-weight: bold;
+      color: #3498db;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .status.active {
+      opacity: 1;
+    }
+
+    .status-text {
+      font-family: 'Roboto Slab', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+      text-align: center;
+      transform: translateX(-50%);
+      position: absolute;
+    }
+
+    .status-text.one { left: 0%; }
+    .status-text.two { left: 33%; }
+    .status-text.three { left: 66%; }
+    .status-text.four { left: 100%; }
+
+    .status-text:hover {
+      color: #3498db;
+      cursor: pointer;
+    }
+
+  </style>
+
+  <div class="container">
+    <h1>Status Perjalanan Pesanan</h1>
+    <div class="track"></div>
+    
+    <div class="dot" style="left: 0%"></div>
+    <div class="dot" style="left: 33%"></div>
+    <div class="dot" style="left: 66%"></div>
+    <div class="dot" style="left: 100%"></div>
+    
+    <div class="moving-dot"></div>
+
+    <div id="status1" class="status">Sedang Diproses...</div>
+    <div id="status2" class="status">Sedang Disiapkan...</div>
+    <div id="status3" class="status">Siap Diantar ke Alamat...</div>
+
+    <div class="status-text one">Sedang Diproses</div>
+    <div class="status-text two">Sedang Disiapkan</div>
+    <div class="status-text three">Siap Diantar ke Alamat</div>
+    <div class="status-text four">Selesai</div>
+  </div>
+
+  <script>
+    const status1 = document.getElementById('status1');
+    const status2 = document.getElementById('status2');
+    const status3 = document.getElementById('status3');
+    
+    function updateMessage(position) {
+      status1.classList.remove('active');
+      status2.classList.remove('active');
+      status3.classList.remove('active');
+
+      if (position === 0) {
+        status1.classList.add('active');
+      } else if (position === 33) {
+        status2.classList.add('active');
+      } else if (position === 66) {
+        status3.classList.add('active');
+      }
+    }
+
+    let position = parseInt(localStorage.getItem('position')) || 0;
+
+    function savePosition() {
+      localStorage.setItem('position', position);
+    }
+
+    setInterval(function() {
+      updateMessage(position);
+
+      position += 33;
+      if (position > 66) position = 0;
+
+      savePosition();
+    }, 120000);
+  </script>
+
+</body>
+</html>

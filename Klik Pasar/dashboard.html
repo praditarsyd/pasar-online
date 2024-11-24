@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Pasar Online</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/logo.png" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href=index.html>BERANDA</a></li>
+                        <li class="nav-item"><a class="nav-link" href=dashboard.html>PRODUK</a></li>
+                        <li class="nav-item"><a class="nav-link" href=akun.html>AKUN</a></li>
+                        <li class="nav-item"><a class="nav-link" href=about.html>TENTANG</a></li>
+                        <li class="nav-item"><a class="nav-link" href=login.html>MASUK</a></li>
+                    </ul>
+                    <!-- Search Bar-->
+                    <form class="d-flex ms-auto" action="search_results.html" method="GET">
+                        <input class="form-control me-2" type="search" placeholder="Cari produk..." aria-label="Search" name="query" />
+                        <button class="btn btn-outline-light" type="submit">Cari</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Ayo Beli di Pasar dengan satu kali klik </div>
+                <div class="masthead-heading text-uppercase"></div>
+                
+            </div>
+        </header>
+
+    <!-- Portfolio Grid Section-->
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">PRODUK</h2>
+                <h3 class="section-subheading text-muted">Belanja sayur, ikan, dan produk segar lainnya.</h3>
+            </div>
+            <div class="row">
+                <!-- Portfolio items -->
+                <div class="container">
+                    <div class="row">
+                        <!-- Produk 1 -->
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <div class="portfolio-item">
+                                <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Bayam', 'per ikat', '3.000', 'assets/img/portfolio/1.jpeg')">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid" src="assets/img/portfolio/1.jpeg" alt="Bayam" />
+                                </a>
+                                <div class="portfolio-caption">
+                                    <div class="portfolio-caption-heading">Bayam</div>
+                                    <div class="portfolio-caption-subheading text-muted">Bayam</div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Produk 2 -->
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <div class="portfolio-item">
+                                <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Jagung', 'per pcs', '5.000', 'assets/img/portfolio/2.jpg')">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="Jagung" />
+                                </a>
+                                <div class="portfolio-caption">
+                                    <div class="portfolio-caption-heading">Jagung</div>
+                                    <div class="portfolio-caption-subheading text-muted">Jagung</div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Produk 3 -->
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <div class="portfolio-item">
+                                <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Cumi-Cumi', 'per kilogram', '45.000', 'assets/img/portfolio/4.jpeg')">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid" src="assets/img/portfolio/4.jpeg" alt="Tomat" />
+                                </a>
+                                <div class="portfolio-caption">
+                                    <div class="portfolio-caption-heading">Cumi-Cumi</div>
+                                    <div class="portfolio-caption-subheading text-muted">Cumi-Cumi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Produk 3 -->
+                 <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Ikan Tongkol', 'per kilogram', '45.000', 'assets/img/portfolio/3.png')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/3.png" alt="Ikan" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Ikan Tongkol</div>
+                            <div class="portfolio-caption-subheading text-muted">Ikan Tongkol</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produk 2 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Beras Sania 5kg', '', '85.000', 'assets/img/portfolio/5.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="Beras" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Beras Sania 5kg</div>
+                            <div class="portfolio-caption-subheading text-muted">Beras Sania 5kg</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Produk 3 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Kangkung', 'per ikat', '10.000', 'assets/img/portfolio/6.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="Kangkung" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Kangkung</div>
+                            <div class="portfolio-caption-subheading text-muted">Kangkung</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Sunco 2lt', '', '35.000', 'assets/img/portfolio/sunco.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/sunco.jpg" alt="Sunco" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Sunco 2lt</div>
+                            <div class="portfolio-caption-subheading text-muted">Sunco 2lt</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produk 2 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Gula 1kg', '', '18.000', 'assets/img/portfolio/gula.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/gula.jpg" alt="Gula" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Gulaku 1kg </div>
+                            <div class="portfolio-caption-subheading text-muted">Gulaku 1kg</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Produk 3 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Telor', 'per piring', '50.000', 'assets/img/portfolio/telor.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/telor.jpg" alt="Telor" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Telor</div>
+                            <div class="portfolio-caption-subheading text-muted">Telor</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Singkong', 'per kilogram', '10.000', 'assets/img/portfolio/singkong.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/singkong.jpg" alt="singkong" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Singkong</div>
+                            <div class="portfolio-caption-subheading text-muted">Singkong</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produk 2 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Wortel', 'per pcs', '1.500', 'assets/img/portfolio/wortel.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/wortel.jpg" alt="Wortel" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Wortel </div>
+                            <div class="portfolio-caption-subheading text-muted">Wortel</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Produk 3 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Kentang', 'per kilogram', '10.000', 'assets/img/portfolio/kentang.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/kentang.jpg" alt="Kentang" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Kentang</div>
+                            <div class="portfolio-caption-subheading text-muted">Kentang</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Bawang Putih', 'per gram', '5.500', 'assets/img/portfolio/baput.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/baput.jpg" alt="Bawang Putih" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Bawang Putih</div>
+                            <div class="portfolio-caption-subheading text-muted">Bawang Putih</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produk 2 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Bawang merah', 'per gram', '5.500', 'assets/img/portfolio/bamer.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/bamer.jpg" alt="Bawang Merah" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Bawang Merah </div>
+                            <div class="portfolio-caption-subheading text-muted">Bawang Merah</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Produk 3 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Cabai', 'per gram', '3.000', 'assets/img/portfolio/cabe.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/cabe.jpg" alt="Cabe" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Cabai Merah</div>
+                            <div class="portfolio-caption-subheading text-muted">Cabai Merah</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Pisang', 'per sisir', '22.000', 'assets/img/portfolio/pisang.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/pisang.jpg" alt="Pisang" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Pisang</div>
+                            <div class="portfolio-caption-subheading text-muted">Pisang</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produk 2 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Apel', 'per kilogram', '35.500', 'assets/img/portfolio/apel.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/apel.jpg" alt="Apel" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Apel </div>
+                            <div class="portfolio-caption-subheading text-muted">Apel</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Produk 3 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#productModal" onclick="viewProductDetails('Mangga', 'per kilogram', '20.000', 'assets/img/portfolio/mangga.jpg')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/mangga.jpg" alt="mangga" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Mangga</div>
+                            <div class="portfolio-caption-subheading text-muted">Mangga</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>        
+
+    </div>
+</div>
+</div>
+</div>
+    </section>
+
+    <!-- Keranjang Icon -->
+    <div class="cart-icon" style="position: fixed; bottom: 20px; right: 20px;">
+        <button class="btn btn-success" onclick="showCart()">
+            <i class="fas fa-shopping-cart"></i> Keranjang
+        </button>
+    </div>
+
+    <!-- Modal Produk -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detail Produk</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="productImage" src="" alt="Product Image" class="img-fluid mb-3">
+                    <h5 id="productName"></h5>
+                    <p id="productDescription"></p>
+                    <p id="productPrice"></p>
+                    <label for="productQuantity">Kuantitas:</label>
+                    <div class="d-flex">
+                        <button class="btn btn-secondary" id="decreaseQuantity" onclick="changeQuantity(-1)">-</button>
+                        <input type="number" id="productQuantity" class="form-control mx-2" value="1" min="1">
+                        <button class="btn btn-secondary" id="increaseQuantity" onclick="changeQuantity(1)">+</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary" onclick="addToCart()">OK</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+   <!-- Modal Keranjang -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Keranjang Belanja</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul id="cartItems" class="list-group"></ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button type="button" class="btn btn-primary" onclick="checkout()">Checkout</button>
+                <script>
+
+</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<script>
+    let selectedProduct = {};
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Menampilkan detail produk ketika gambar diklik
+    function formatPrice(price) {
+        return price.toLocaleString('id-ID'); // Using 'id-ID' for Indonesian locale, which uses '.' as thousand separator
+    }
+
+    function viewProductDetails(name, description, price, image) {
+        selectedProduct = {
+            name,
+            description,
+            price: parseFloat(price.replace(/[^\d,-]/g, '')), // Mengubah harga menjadi angka (dengan mempertimbangkan format seperti "Rp. 20.000")
+            image
+        };
+        document.getElementById('productName').textContent = name;
+        document.getElementById('productDescription').textContent = description;
+        document.getElementById('productPrice').textContent = `Harga: Rp. ${price}`;
+        document.getElementById('productImage').src = image;
+    }
+
+    // Menambah atau mengurangi kuantitas produk
+    function changeQuantity(amount) {
+        let quantity = document.getElementById('productQuantity');
+        let newQuantity = parseInt(quantity.value) + amount;
+        if (newQuantity >= 1) {
+            quantity.value = newQuantity;
+        }
+    }
+
+    // Menambahkan produk ke dalam keranjang
+    function addToCart() {
+        let productName = document.getElementById('productName').innerText;
+        let productPrice = selectedProduct.price; // Mengambil harga dalam bentuk number
+        let productQuantity = parseInt(document.getElementById('productQuantity').value); // Mengambil kuantitas sebagai angka
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let existingProduct = cart.find(item => item.name === productName);
+
+        if (existingProduct) {
+            existingProduct.quantity += productQuantity;
+        } else {
+            cart.push({
+                name: productName,
+                price: productPrice,
+                quantity: productQuantity,
+            });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert('Produk telah ditambahkan ke keranjang!'); // Beri notifikasi
+        updateCart(); // Perbarui tampilan keranjang
+    }
+
+    // Menutup modal
+    let modal = bootstrap.Modal.getInstance(document.getElementById('productModal'));
+    modal.hide();
+</script>
+
+<!-- Keranjang Icon -->
+<div class="cart-icon" style="position: fixed; bottom: 20px; right: 20px;">
+    <button class="btn btn-success" onclick="showCart()">
+        <i class="fas fa-shopping-cart"></i> Keranjang
+    </button>
+</div>
+
+<!-- Modal Keranjang -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Isi Keranjang</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <!-- Isi Keranjang akan tampil di sini -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <!-- Tombol untuk checkout -->
+                <button type="button" class="btn btn-primary" onclick="checkout()">Checkout</button>
+                <!-- Tombol untuk menghapus keranjang -->
+                <button type="button" class="btn btn-danger" onclick="clearCart()">Hapus List Keranjang</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Fungsi untuk menampilkan keranjang belanja
+    function showCart() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || []; // Ambil keranjang dari localStorage
+        let cartItemsContainer = document.getElementById('cartItems');
+        cartItemsContainer.innerHTML = ''; // Bersihkan tampilan sebelumnya
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Keranjang Anda kosong.</p>';
+        } else {
+            cart.forEach((item, index) => {
+                let cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <p><strong>${item.name}</strong></p>
+                    <p>Harga: ${item.price}</p>
+                    <p>Kuantitas: ${item.quantity}</p>
+                    <button class="btn btn-danger" onclick="removeItemFromCart(${index})">
+                        <i class="fas fa-trash-alt"></i> Hapus
+                    </button>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+        }
+
+        // Menampilkan modal keranjang
+        let cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
+        cartModal.show();
+    }
+
+    // Fungsi untuk menghapus item dari keranjang
+    function removeItemFromCart(index) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.splice(index, 1); // Menghapus item pada indeks tertentu
+        localStorage.setItem('cart', JSON.stringify(cart)); // Simpan kembali ke localStorage
+
+        showCart(); // Perbarui tampilan keranjang
+    }
+
+    // Fungsi untuk menampilkan keranjang belanja dan menghitung total harga
+    function updateCart() {
+        const cartItemsList = document.getElementById('cartItemsList');
+        const totalAmountElement = document.getElementById('totalAmount');
+        let totalAmount = 0;
+
+        cartItemsList.innerHTML = '';
+
+        cart.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${item.name} - ${item.quantity} x ${item.price}`;
+            cartItemsList.appendChild(listItem);
+
+            const price = parseFloat(item.price.replace(/[^\d.-]/g, ''));
+            if (!isNaN(price)) {
+                totalAmount += price * item.quantity;
+            }
+        });
+
+        totalAmountElement.textContent = `Rp. ${totalAmount.toLocaleString()}`;
+    }
+
+    // Fungsi untuk mengarahkan ke halaman konfirmasi jika pengguna sudah login
+    function checkout() {
+        let isLoggedIn = localStorage.getItem('isLoggedIn');
+        
+        if (isLoggedIn === 'true') {
+            window.location.href = 'konfirm.html';
+        } else {
+            alert('Silakan login terlebih dahulu sebelum checkout!');
+            window.location.href = 'login.html';  // Arahkan ke halaman login
+        }
+    }
+
+    // Fungsi untuk menghapus seluruh isi keranjang
+    function clearCart() {
+        localStorage.setItem('cart', JSON.stringify([])); // Kosongkan keranjang
+        showCart(); // Perbarui tampilan keranjang
+    }
+</script>
+</body>
+</html>
